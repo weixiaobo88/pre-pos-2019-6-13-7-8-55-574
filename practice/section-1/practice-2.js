@@ -1,5 +1,20 @@
-'use strict';
+"use strict";
 
 function collectSameElements(collectionA, collectionB) {
-  return '实现练习要求，并改写该行代码。';
+  let result = [];
+
+  for (let index = 0; index < collectionA.length; index++) {
+    const element = collectionA[index];
+    for (let index = 0; index < collectionB.length; index++) {
+      const elementOfCollectionB = collectionB[index];
+      if (isElementInCollection(elementOfCollectionB, element)) {
+        result.push(element);
+      }
+    }
+  }
+  return result;
+}
+
+function isElementInCollection(collection, element) {
+  return collection.indexOf(element) > -1;
 }
